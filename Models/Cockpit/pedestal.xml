@@ -1,0 +1,635 @@
+<PropertyList>
+
+<path>pedestal.ac</path>
+
+<!-- CDU -->
+
+
+  <animation>
+    <type>material</type>
+    <object-name>Mesh286</object-name>
+    <object-name>forward_panel_0</object-name>
+    <object-name>Mesh1.001_1</object-name>
+    <object-name>EVAC_1_1</object-name>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.25 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+    </emission>
+  </animation>
+
+<model>
+	<path>Aircraft/An-124/Models/Cockpit/Instruments/CDU/boeing.xml</path>
+	<offsets>
+		<x-m> 0.880</x-m>
+		<y-m> 0.120</y-m>
+		<z-m> 0.487</z-m>
+		<pitch-deg>-75</pitch-deg>
+	</offsets>
+
+</model>
+
+<!-- ND -->
+
+<model>
+		<path>Aircraft/An-124/Models/Cockpit/Instruments/MFD/ND.xml</path>
+		<offsets>
+			<x-m>0.90</x-m>
+			<y-m>-0.09</y-m>
+			<z-m>0.48</z-m>
+			<pitch-deg>-73</pitch-deg>
+		</offsets>
+		<!--condition>
+			<greater-than-equals>
+				<property>/systems/electrical/outputs/efis</property>
+				<value>12</value>
+			</greater-than-equals>
+		</condition-->
+	</model>
+
+
+<!-- SPEEDBRAKE LEVER -->
+
+<animation>
+	<type>pick</type>
+	<object-name>speedbrake</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>  
+		<binding>
+			<command>property-adjust</command>
+			<property>controls/flight/speedbrake-lever</property>
+			<step>1</step>
+			<min>0</min>
+			<max>2</max>
+		</binding>
+		<!--binding>
+			<condition>
+				<equals>
+					<property>/autopilot/autospoilers/step</property>
+					<value>3</value>
+				</equals>
+			</condition>
+			<command>property-assign</command>
+			<property>/autopilot/autospoilers/step</property>
+			<value>0</value>
+		</binding-->
+	</action>
+	<action>
+		<button>1</button>
+		<repeatable>false</repeatable>  
+		<binding>
+			<command>property-adjust</command>
+			<property>controls/flight/speedbrake-lever</property>
+			<step>-1</step>
+			<min>0</min>
+			<max>2</max>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>rotate</type>
+	<object-name>speedbrake</object-name>
+	<property>controls/flight/speedbrake-lever</property>
+	<!--property>/autopilot/autospoilers/step</property-->
+	<interpolation>
+		<!--entry>
+			<ind>0</ind>
+			<dep>-3</dep>
+		</entry-->
+		<entry>
+			<ind>0</ind>
+			<dep>0</dep>
+		</entry>
+		<entry>
+			<ind>1</ind>
+			<dep>32</dep>
+		</entry>
+		<entry>
+			<ind>2</ind>
+			<dep>60</dep>
+		</entry>
+	</interpolation>
+	<factor>60</factor>
+	<center>
+		<x-m>1.143</x-m>
+		<y-m>0</y-m>
+		<z-m>0.362</z-m>
+	</center>
+	<axis>
+		<x>0</x>
+		<y>1</y>
+		<z>0</z>
+	</axis>
+</animation>
+
+
+<!-- THROTTLE LEVERS -->
+<!-- ENGINE 1 -->
+
+<animation>
+	<type>pick</type>
+	<object-name>throttle_eng.1</object-name>
+	<visible>true</visible>
+	<action>
+			<button>0</button>
+			<button>3</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/engines/engine[0]/throttle</property>
+				<step type="double">0.01</step>
+				<max>1</max>
+			</binding>
+		</action>
+		<action>
+			<button>1</button>
+			<button>4</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/engines/engine[0]/throttle</property>
+				<step type="double">-0.01</step>
+				<min>0</min>
+			</binding>
+		</action>
+</animation>
+	
+<animation>
+	<type>rotate</type>
+	<object-name>throttle_eng.1</object-name>
+	<object-name>reverser_eng.1</object-name>
+	<property>/controls/engines/engine[0]/throttle</property>
+	<factor>35</factor>
+	<center>
+		<x-m>1.133</x-m>
+		<y-m>0</y-m>
+		<z-m>0.362</z-m>
+	</center>
+	<axis>
+		<x> 0.0</x>
+		<y>-1.0</y>
+		<z> 0.0</z>
+	</axis>
+</animation>
+
+<animation>
+	<type>rotate</type>
+	<object-name>reverser_eng.1</object-name>
+	<property>/controls/engines/engine[0]/reverser</property>
+	<factor>40</factor>
+	<center>
+		<x-m>1.164</x-m>
+		<y-m>0</y-m>
+		<z-m>0.558</z-m>
+	</center>
+	<axis>
+		<x>0.0</x>
+		<y>1.0</y>
+		<z>0</z>
+	</axis>
+</animation>
+
+<!-- ENGINE 2 -->
+
+<animation>
+	<type>pick</type>
+	<object-name>throttle_eng.2</object-name>
+	<visible>true</visible>
+	<action>
+			<button>0</button>
+			<button>3</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/engines/engine[1]/throttle</property>
+				<step type="double">0.01</step>
+				<max>1</max>
+			</binding>
+		</action>
+		<action>
+			<button>1</button>
+			<button>4</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/engines/engine[1]/throttle</property>
+				<step type="double">-0.01</step>
+				<min>0</min>
+			</binding>
+		</action>
+</animation>
+
+<animation>
+	<type>rotate</type>
+	<object-name>throttle_eng.2</object-name>
+	<object-name>reverser_eng.2</object-name>
+	<property>/controls/engines/engine[1]/throttle</property>
+	<factor>35</factor>
+	<center>
+		<x-m>1.133</x-m>
+		<y-m>0</y-m>
+		<z-m>0.362</z-m>
+	</center>
+	<axis>
+		<x> 0.0</x>
+		<y>-1.0</y>
+		<z> 0.0</z>
+	</axis>
+</animation>
+
+<animation>
+	<type>rotate</type>
+	<object-name>reverser_eng.2</object-name>
+	<property>/controls/engines/engine[1]/reverser</property>
+	<factor>40</factor>
+	<center>
+		<x-m>1.164</x-m>
+		<y-m>0</y-m>
+		<z-m>0.558</z-m>
+	</center>
+	<axis>
+		<x>0.0</x>
+		<y>1.0</y>
+		<z>0</z>
+	</axis>
+</animation>
+
+<!-- ENGINE 3 -->
+
+<animation>
+	<type>pick</type>
+	<object-name>throttle_eng.3</object-name>
+	<visible>true</visible>
+	<action>
+			<button>0</button>
+			<button>3</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/engines/engine[2]/throttle</property>
+				<step type="double">0.01</step>
+				<max>1</max>
+			</binding>
+		</action>
+		<action>
+			<button>1</button>
+			<button>4</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/engines/engine[2]/throttle</property>
+				<step type="double">-0.01</step>
+				<min>0</min>
+			</binding>
+		</action>
+</animation>
+
+<animation>
+	<type>rotate</type>
+	<object-name>throttle_eng.3</object-name>
+	<object-name>reverser_eng.3</object-name>
+	<property>/controls/engines/engine[2]/throttle</property>
+	<factor>35</factor>
+	<center>
+		<x-m>1.133</x-m>
+		<y-m>0</y-m>
+		<z-m>0.362</z-m>
+	</center>
+	<axis>
+		<x> 0.0</x>
+		<y>-1.0</y>
+		<z> 0.0</z>
+	</axis>
+</animation>
+
+<animation>
+	<type>rotate</type>  
+	<object-name>reverser_eng.3</object-name>
+	<property>/controls/engines/engine[2]/reverser</property>
+	<factor>40</factor>
+	<center>
+		<x-m>1.164</x-m>
+		<y-m>0</y-m>
+		<z-m>0.558</z-m>
+	</center>
+	<axis>
+		<x>0.0</x>
+		<y>1.0</y>
+		<z>0</z>
+	</axis>
+</animation>
+
+<!-- ENGINE 4 -->
+
+<animation>
+	<type>pick</type>
+	<object-name>throttle_eng.4</object-name>
+	<visible>true</visible>
+	<action>
+			<button>0</button>
+			<button>3</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/engines/engine[3]/throttle</property>
+				<step type="double">0.01</step>
+				<max>1</max>
+			</binding>
+		</action>
+		<action>
+			<button>1</button>
+			<button>4</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/engines/engine[3]/throttle</property>
+				<step type="double">-0.01</step>
+				<min>0</min>
+			</binding>
+		</action>
+</animation>
+
+<animation>
+	<type>rotate</type>
+	<object-name>throttle_eng.4</object-name>
+	<object-name>reverser_eng.4</object-name>
+	<property>/controls/engines/engine[3]/throttle</property>
+	<factor>35</factor>
+	<center>
+		<x-m>1.133</x-m>
+		<y-m>0</y-m>
+		<z-m>0.362</z-m>
+	</center>
+	<axis>
+		<x> 0.0</x>
+		<y>-1.0</y>
+		<z> 0.0</z>
+	</axis>
+</animation>
+
+<animation>
+	<type>rotate</type>
+	<object-name>reverser_eng.4</object-name>
+	<property>/controls/engines/engine[3]/reverser</property>
+	<factor>40</factor>
+	<center>
+		<x-m>1.164</x-m>
+		<y-m>0</y-m>
+		<z-m>0.558</z-m>
+	</center>
+	<axis>
+		<x>0.0</x>
+		<y>1.0</y>
+		<z>0</z>
+	</axis>
+</animation>
+
+
+<!-- FLAPS LEVER -->
+
+<animation>
+	<type>rotate</type>
+	<object-name>flap_handle</object-name>
+	<property>/controls/flight/flaps</property>
+	<interpolation>
+		<entry>
+			<ind>0</ind>
+			<dep>0.00</dep>
+		</entry>
+		<entry>
+			<ind>0.001</ind>
+			<dep>10.83</dep>
+		</entry>
+		<entry>
+			<ind>0.167</ind>
+			<dep>21.67</dep>
+		</entry>
+		<entry>
+			<ind>0.333</ind>
+			<dep>32.50</dep>
+		</entry>
+		<entry>
+			<ind>0.667</ind>
+			<dep>43.33</dep>
+		</entry>
+		<entry>
+			<ind>0.833</ind>
+			<dep>54.17</dep>
+		</entry>
+		<entry>
+			<ind>1</ind>
+			<dep>65.00</dep>
+		</entry>
+	</interpolation>
+	<center>
+		<x-m>1.143</x-m>
+		<y-m>0</y-m>
+		<z-m>0.362</z-m>
+	</center>
+	<axis>
+		<x>0.0</x>
+		<y>1.0</y>
+		<z>0</z>
+	</axis>
+</animation>
+
+
+<!-- FUEL CONTROL -->
+
+<animation>
+	<type>pick</type>
+	<object-name>fuel_ctrl.1</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>  
+		<binding>
+			<command>property-toggle</command>
+			<property>/controls/engines/engine/cutoff</property>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>rotate</type>
+	<object-name>fuel_ctrl.1</object-name>
+	<property>/controls/engines/engine/cutoff</property>
+	<factor>80</factor>
+	<center>
+		<x-m>1.239</x-m>
+		<y-m>0</y-m>
+		<z-m>0.465</z-m>
+	</center>
+	<axis>
+		<x>0</x>
+		<y>1</y>
+		<z>0</z>
+	</axis>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>fuel_ctrl.2</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>  
+		<binding>
+			<command>property-toggle</command>
+			<property>/controls/engines/engine[1]/cutoff</property>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>rotate</type>
+	<object-name>fuel_ctrl.2</object-name>
+	<property>/controls/engines/engine[1]/cutoff</property>
+	<factor>80</factor>
+	<center>
+		<x-m>1.239</x-m>
+		<y-m>0</y-m>
+		<z-m>0.465</z-m>
+	</center>
+	<axis>
+		<x>0</x>
+		<y>1</y>
+		<z>0</z>
+	</axis>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>fuel_ctrl.3</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>  
+		<binding>
+			<command>property-toggle</command>
+			<property>/controls/engines/engine[2]/cutoff</property>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>rotate</type>
+	<object-name>fuel_ctrl.3</object-name>
+	<property>/controls/engines/engine[2]/cutoff</property>
+	<factor>80</factor>
+	<center>
+		<x-m>1.239</x-m>
+		<y-m>0</y-m>
+		<z-m>0.465</z-m>
+	</center>
+	<axis>
+		<x>0</x>
+		<y>1</y>
+		<z>0</z>
+	</axis>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>fuel_ctrl.4</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>  
+		<binding>
+			<command>property-toggle</command>
+			<property>/controls/engines/engine[3]/cutoff</property>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>rotate</type>
+	<object-name>fuel_ctrl.4</object-name>
+	<property>/controls/engines/engine[3]/cutoff</property>
+	<factor>80</factor>
+	<center>
+		<x-m>1.239</x-m>
+		<y-m>0</y-m>
+		<z-m>0.465</z-m>
+	</center>
+	<axis>
+		<x>0</x>
+		<y>1</y>
+		<z>0</z>
+	</axis>
+ </animation>
+
+
+<!-- Stabilizer Trim -->
+<animation>
+	<type>pick</type>
+	<object-name>StabTrimAltn</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>true</repeatable>
+		<binding>
+			<command>property-adjust</command>
+			<property>controls/flight/elevator-trim</property>
+			<step>0.01</step>
+			<min>-1</min>
+			<max>1</max>
+		</binding>
+	</action>
+	<action>
+		<button>1</button>
+		<repeatable>true</repeatable>
+		<binding>
+			<command>property-adjust</command>
+			<property>controls/flight/elevator-trim</property>
+			<step>-0.01</step>
+			<min>-1</min>
+			<max>1</max>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>StabTrimAltn</object-name>
+	<action>
+		<button>3</button>
+		<repeatable>true</repeatable>
+		<binding>
+			<command>property-adjust</command>
+			<property>controls/flight/elevator-trim</property>
+			<step>0.01</step>
+			<min>-1</min>
+			<max>1</max>
+		</binding>
+	</action>
+	<action>
+		<button>4</button>
+		<repeatable>true</repeatable>
+		<binding>
+			<command>property-adjust</command>
+			<property>controls/flight/elevator-trim</property>
+			<step>-0.01</step>
+			<min>-1</min>
+			<max>1</max>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>StabTrimCut.cvr</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+		    <command>property-assign</command>
+		   <property>/controls/flight/elevator-trim</property>
+			<value>0</value>
+		   </binding>
+	</action>
+</animation>
+
+
+</PropertyList>
+
+

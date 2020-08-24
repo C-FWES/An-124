@@ -1,0 +1,1032 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+
+<!-- VOR-->
+
+    <name>VORtext</name>
+    <w-base>256</w-base>
+    <h-base>256</h-base>
+
+    <layers>
+
+        <layer>
+            <name>bkgrd</name>
+            <w>256</w>
+            <h>256</h>
+            <texture>
+                <path>Aircraft/An-124/Models/Cockpit/Instruments/MFD/transparent.png</path>
+                <x1>0.0</x1>
+                <y1>0.0</y1>
+                <x2>1</x2>
+                <y2>1</y2>
+            </texture>
+        <emissive>true</emissive>
+        </layer>
+
+        <layer>
+            <name>VOR num</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>7</point-size>
+            <color>
+                <red>0.8</red>
+                <green>0.8</green>
+                <blue>0.8</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>literal</type>
+                    <text>VOR1</text>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-125</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>118</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <name>VOR ident</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>7</point-size>
+            <color>
+                <red>0.2</red>
+                <green>0.6</green>
+                <blue>0.2</blue>
+            </color>
+            <condition>
+                <property>instrumentation/nav[0]/in-range</property>
+            </condition>
+            <chunks>
+                <chunk>
+                    <type>text-value</type>
+                    <property>instrumentation/nav/nav-id</property>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-80</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>118</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <name>VOR course</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>7</point-size>
+            <color>
+                <red>0.2</red>
+                <green>0.6</green>
+                <blue>0.2</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>number-value</type>
+                    <property>instrumentation/nav/radials/selected-deg</property>
+                    <format>%03.0f Deg</format>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>30</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>118</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <condition>
+                <property>instrumentation/dme[0]/in-range</property>
+            </condition>
+            <name>VOR dist</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>7</point-size>
+            <color>
+                <red>0.2</red>
+                <green>0.6</green>
+                <blue>0.2</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>number-value</type>
+                    <property>instrumentation/dme[0]/indicated-distance-nm</property>
+                    <format>%03.1f nm</format>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-40</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>118</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+
+<!--Wind-->   
+
+
+ <layer>
+            <name>Wind num</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>7</point-size>
+            <color>
+                <red>0.8</red>
+                <green>0.8</green>
+                <blue>0.8</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>literal</type>
+                    <text>WIND</text>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-125</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>105</offset>
+                </transformation>
+            </transformations>
+        </layer>   
+
+        <layer>
+            <condition>
+                <greater-than>
+                    <property>environment/wind-speed-kt</property>
+                    <value>0.99</value>
+                </greater-than>
+            </condition>
+            <name>Wind</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>7</point-size>
+            <color>
+                <red>0.2</red>
+                <green>0.6</green>
+                <blue>0.2</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>number-value</type>
+                    <property>environment/wind-from-heading-deg</property>
+                    <format>%3.0f</format>
+                </chunk>
+                <chunk>
+                    <type>literal</type>
+                    <text>*/</text>
+                </chunk>
+                <chunk>
+                    <type>number-value</type>
+                    <property>environment/wind-speed-kt</property>
+                    <format>%3.0f KT</format>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-88</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>105</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+<!-- Ground Speed -->
+
+	<layer>
+            <name>GS</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>7</point-size>
+            <color>
+                <red>0.8</red>
+                <green>0.8</green>
+                <blue>0.8</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>literal</type>
+                    <text>GS</text>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-125</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>90</offset>
+                </transformation>
+            </transformations>
+        </layer>   
+
+
+        <layer>
+            <name>GSPD</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>7</point-size>
+            <color>
+                <red>0.2</red>
+                <green>0.6</green>
+                <blue>0.2</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>number-value</type>
+                    <property>velocities/groundspeed-kt</property>
+                    <format>%3.0f KT</format>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-88</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>90</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+<!-- WPT-->
+
+      <layer>
+            <name>ROUTE</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>7</point-size>
+            <color>
+                <red>0.8</red>
+                <green>0.8</green>
+                <blue>0.8</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>literal</type>
+                    <text>WPT</text>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-125</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>75</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+     <layer>
+            <condition>
+                <greater-than>
+                    <property>autopilot/route-manager/route/num</property>
+                    <value>0</value>
+                </greater-than>
+            </condition>
+            <name>WP ID</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>7</point-size>
+            <color>
+                <red>0.2</red>
+                <green>0.6</green>
+                <blue>0.2</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>text-value</type>
+                    <property>autopilot/route-manager/wp/id</property>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-95</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>75</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+	<layer>
+            <condition>
+                <greater-than>
+                    <property>autopilot/route-manager/route/num</property>
+                    <value>0</value>
+                </greater-than>
+            </condition>
+            <name>WP DIST</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>7</point-size>
+            <color>
+                <red>0.2</red>
+                <green>0.6</green>
+                <blue>0.2</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>number-value</type>
+                    <property>autopilot/route-manager/wp/dist</property>
+                    <format>%3.1f NM</format>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-45</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>75</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+    <layer>
+            <name>ETA</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>7</point-size>
+            <color>
+                <red>0.8</red>
+                <green>0.8</green>
+                <blue>0.8</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>literal</type>
+                    <text>ETA</text>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>10</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>75</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <condition>
+                <greater-than>
+                    <property>autopilot/route-manager/route/num</property>
+                    <value>0</value>
+                </greater-than>
+            </condition>
+            <name>WP ETA</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>7</point-size>
+            <color>
+                <red>0.2</red>
+                <green>0.6</green>
+                <blue>0.2</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>text-value</type>
+                    <property>autopilot/route-manager/wp/eta</property>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>40</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>75</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+<!-- Destination -->
+
+
+<layer>
+            <name>dest</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>7</point-size>
+            <color>
+                <red>0.8</red>
+                <green>0.8</green>
+                <blue>0.8</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>literal</type>
+                    <text>DEST</text>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-125</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>60</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+
+        <layer>
+            <name>destination</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>7</point-size>
+            <color>
+                <red>0.2</red>
+                <green>0.6</green>
+                <blue>0.2</blue>
+            </color>
+            <chunks>
+                 <chunk>
+                    <type>text-value</type>
+                    <property>autopilot/route-manager/destination/airport</property>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-88</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>60</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+      <layer>
+            <name>dest</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>7</point-size>
+            <color>
+                <red>0.8</red>
+                <green>0.8</green>
+                <blue>0.8</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>literal</type>
+                    <text>ALT</text>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>0</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>60</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+    <layer>
+            
+            <name>altum</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>7</point-size>
+            <color>
+                <red>0.2</red>
+                <green>0.6</green>
+                <blue>0.2</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>number-value</type>
+                    <property>autopilot/route-manager/destination/field-elevation-ft</property>
+                    <format>%3.f</format>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>45</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>60</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+
+<!-- Total distance and ete (Estimated Time Enroute)-->
+
+ 	   <layer>
+            <name>totalDIST</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>7</point-size>
+            <color>
+                <red>0.8</red>
+                <green>0.8</green>
+                <blue>0.8</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>literal</type>
+                    <text>TOT DIST</text>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-125</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>45</offset>
+                </transformation>
+            </transformations>
+        </layer>
+      <layer>
+            <condition>
+                <greater-than>
+                    <property>autopilot/route-manager/route/num</property>
+                    <value>0</value>
+                </greater-than>
+            </condition>
+            <name>TOTAL DIST</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>7</point-size>
+            <color>
+                <red>0.2</red>
+                <green>0.6</green>
+                <blue>0.2</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>number-value</type>
+                    <property>autopilot/route-manager/wp-last/dist</property>
+                    <format>%3.1f NM</format>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-65</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>45</offset>
+                </transformation>
+            </transformations>
+        </layer>
+       <layer>
+            <name>finalETA</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>7</point-size>
+            <color>
+                <red>0.8</red>
+                <green>0.8</green>
+                <blue>0.8</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>literal</type>
+                    <text>ETE</text>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>10</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>45</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+      <layer>
+            <condition>
+                <greater-than>
+                    <property>autopilot/route-manager/route/num</property>
+                    <value>0</value>
+                </greater-than>
+            </condition>
+            <name>ETAlast</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>7</point-size>
+            <color>
+                <red>0.2</red>
+                <green>0.6</green>
+                <blue>0.2</blue>
+            </color>
+            <chunks>
+                <chunk>
+			<type>number-value</type>
+		
+		     	<property>autopilot/route-manager/ete-hours</property>
+
+			<format>%3.0f</format>
+                </chunk>
+		<chunk>
+			<type>number-value</type>
+		
+		     	<property>autopilot/route-manager/ete-mins</property>
+
+			<format>%3.0f</format>
+                </chunk>
+		<chunk>
+			<type>number-value</type>
+		
+		     	<property>autopilot/route-manager/ete-secs</property>
+
+			<format>%3.0f</format>
+                </chunk>
+
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>35</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>45</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+<!-- Flight Time-->
+
+ <layer>
+            <name>FT</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>7</point-size>
+            <color>
+                <red>0.8</red>
+                <green>0.8</green>
+                <blue>0.8</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>literal</type>
+                    <text>FLT TIME</text>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-125</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>30</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+      <layer>
+            <condition>
+                <greater-than>
+                    <property>autopilot/route-manager/route/num</property>
+                    <value>0</value>
+                </greater-than>
+            </condition>
+            <name>FTimeq</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>7</point-size>
+            <color>
+                <red>0.2</red>
+                <green>0.6</green>
+                <blue>0.2</blue>
+            </color>
+            <chunks>
+                <chunk>
+			<type>number-value</type>
+		
+		     	<property>autopilot/route-manager/flight-time-hours</property>
+
+			<format>%3.0f</format>
+                </chunk>
+		<chunk>
+			<type>number-value</type>
+		
+		     	<property>autopilot/route-manager/flight-time-mins</property>
+
+			<format>%3.0f</format>
+                </chunk>
+		<chunk>
+			<type>number-value</type>
+		
+		     	<property>autopilot/route-manager/flight-time-secs</property>
+
+			<format>%3.0f</format>
+                </chunk>
+
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-55</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>30</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+
+<!--fuel-->
+
+ <layer>
+            <name>totalFUEL</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>7</point-size>
+            <color>
+                <red>0.8</red>
+                <green>0.8</green>
+                <blue>0.8</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>literal</type>
+                    <text>FUEL TOT</text>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-125</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>15</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+
+ <layer>
+            <name>totalFuelq</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>7</point-size>
+            <color>
+                <red>0.2</red>
+                <green>0.6</green>
+                <blue>0.2</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>number-value</type>
+                    <property>/consumables/fuel/total-fuel-lbs</property>
+                    <format>%5.0f</format>
+                </chunk>
+		 <chunk>
+                    <type>literal</type>
+                    <text>     LBS</text>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-60</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>15</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+<!-- PAYLOAD -->
+
+ <layer>
+            <name>totalcargo</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>7</point-size>
+            <color>
+                <red>0.8</red>
+                <green>0.8</green>
+                <blue>0.8</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>literal</type>
+                    <text>CARGO WGT</text>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-125</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>0</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+
+ <layer>
+            <name>totalFuelq</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>7</point-size>
+            <color>
+                <red>0.2</red>
+                <green>0.6</green>
+                <blue>0.2</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>number-value</type>
+                    <property>/sim/weight[1]/weight-lb</property>
+                    <format>%5.0f</format>
+                </chunk>
+		 <chunk>
+                    <type>literal</type>
+                    <text>     LBS</text>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-50</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>0</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+<!-- Weight tot-->
+ <condition>
+                <greater-than>
+                    <property>autopilot/route-manager/route/num</property>
+                    <value>0</value>
+                </greater-than>
+            </condition>
+
+<layer>
+            <name>totalWeight</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>7</point-size>
+            <color>
+                <red>0.8</red>
+                <green>0.8</green>
+                <blue>0.8</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>literal</type>
+                    <text>WGT TOT</text>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-125</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>-15</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+<layer>
+	     <condition>
+                <less-than>
+                    <property>/yasim/gross-weight-lbs</property>
+                    <value>893000</value>
+                </less-than>
+            </condition>
+            <name>weightFuelqok</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>7</point-size>
+            <color>
+                <red>0.2</red>
+                <green>0.6</green>
+                <blue>0.2</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>number-value</type>
+                    <property>/yasim/gross-weight-lbs</property>
+                    <format>%5.0f</format>
+                </chunk>
+		 <chunk>
+                    <type>literal</type>
+                    <text>     LBS</text>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-60</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>-15</offset>
+                </transformation>
+            </transformations>
+        </layer>
+<layer>
+	     <condition>
+                <greater-than>
+                    <property>/yasim/gross-weight-lbs</property>
+                    <value>893000</value>
+                </greater-than>
+            </condition>
+            <name>weightFuelqnok</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>7</point-size>
+            <color>
+                <red>0.6</red>
+                <green>0.2</green>
+                <blue>0.2</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>number-value</type>
+                    <property>/yasim/gross-weight-lbs</property>
+                    <format>%5.0f</format>
+                </chunk>
+		 <chunk>
+                    <type>literal</type>
+                    <text>     LBS</text>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-60</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>-15</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+    </layers>
+</PropertyList>

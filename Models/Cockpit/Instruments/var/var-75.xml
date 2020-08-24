@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- #############################################################################
+     #    (C) 2006 by Yurik V. Nikiforoff - port for FGFS,  FDM,                 #
+     #    2d & 3d instruments, animations, systems and over.                     #
+     #    yurik@megasignal.com                                                   #
+     #                                                                           #
+     #    Updated BARANGER Emmanuel 2015                                         #
+     #############################################################################    
+     3D instrument for Tu-154
+-->
+<PropertyList>
+  
+  <path>var-75.ac</path>
+  
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+    
+    <object-name>vitre</object-name>
+  </animation>
+  
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/An-124/Models/Effects/Glass/glass</inherits-from>
+    <object-name>vitre</object-name>
+  </effect>
+  
+  <animation>
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>needle</object-name>
+    <property>instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
+    <interpolation>
+      <entry><ind>  14271.650 </ind><dep>  177 </dep></entry>
+      <entry><ind>   9842.500 </ind><dep>  142 </dep></entry>
+      <entry><ind>   4921.250 </ind><dep>   83 </dep></entry>
+      <entry><ind>   2460.625 </ind><dep>   44 </dep></entry>
+      <entry><ind>      0.000 </ind><dep>    0 </dep></entry>
+      <entry><ind>  -2460.625 </ind><dep>  -44 </dep></entry>
+      <entry><ind>  -4921.250 </ind><dep>  -83 </dep></entry>
+      <entry><ind>  -9842.500 </ind><dep> -142 </dep></entry>
+      <entry><ind> -14271.650 </ind><dep> -177 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+  
+</PropertyList>

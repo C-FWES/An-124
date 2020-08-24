@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+<path>glareshield.ac</path>
+
+
+
+  <animation>
+    <type>material</type>
+    <!--object-name>EFIS.panel</object-name>
+    <object-name>EFIS.panel.001</object-name>
+    <object-name>glareshield_1</object-name>
+    <object-name>sidepanels.001</object-name-->
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.25 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+    </emission>
+  </animation>
+
+
+<!--model>
+  <name>ap</name>
+  <path>Aircraft/An-124/Models/Cockpit/Instruments/ap/ap.xml</path>
+  <offsets>
+		<x-m>0.905</x-m>
+		<y-m>-0.34</y-m>
+		<z-m>0.975</z-m>
+		<pitch-deg>-22</pitch-deg>
+	</offsets>
+</model-->
+
+<model>
+	<name>nav1</name>
+	<path>Aircraft/An-124/Models/Cockpit/Instruments/VIR-32/ctl32-nav1.xml</path>
+	 <offsets>
+		<x-m>0.905</x-m>
+		<y-m>-0.32</y-m>
+		<z-m>0.975</z-m>
+		<pitch-deg>-22</pitch-deg>
+	</offsets>
+</model>
+
+<model>
+	<name>nav2</name>
+	<path>Aircraft/An-124/Models/Cockpit/Instruments/VIR-32/ctl32-nav2.xml</path>
+	 <offsets>
+		<x-m>0.905</x-m>
+		<y-m>-0.255</y-m>
+		<z-m>0.975</z-m>
+		<pitch-deg>-22</pitch-deg>
+	</offsets>
+</model>
+
+
+
+
+
+<model>
+	<name>com1</name>
+	<path>Aircraft/An-124/Models/Cockpit/Instruments/VHF/ctl22-com1.xml</path>
+	 <offsets>
+		<x-m>0.905</x-m>
+		<y-m>-0.085</y-m>
+		<z-m>0.975</z-m>
+		<pitch-deg>-22</pitch-deg>
+	</offsets>
+</model>
+
+
+<model>
+	<name>com2</name>
+	<path>Aircraft/An-124/Models/Cockpit/Instruments/VHF/ctl22-com2.xml</path>
+	 <offsets>
+		<x-m>0.905</x-m>
+		<y-m>-0.02</y-m>
+		<z-m>0.975</z-m>
+		<pitch-deg>-22</pitch-deg>
+	</offsets>
+</model>
+
+<model>
+	<name>adf1</name>
+	<path>Aircraft/An-124/Models/Cockpit/Instruments/ADF/ctl62-adf.xml</path>
+	 <offsets>
+		<x-m>0.905</x-m>
+		<y-m>0.190</y-m>
+		<z-m>0.975</z-m>
+		<pitch-deg>-22</pitch-deg>
+	</offsets>
+</model>
+
+
+<model>
+	<name>adf2</name>
+	<path>Aircraft/An-124/Models/Cockpit/Instruments/ADF/ctl62-adf2.xml</path>
+	 <offsets>
+		<x-m>0.905</x-m>
+		<y-m>0.260</y-m>
+		<z-m>0.975</z-m>
+		<pitch-deg>-22</pitch-deg>
+	</offsets>
+</model>
+
+<model>
+	<name>transponder</name>
+	<path>Aircraft/An-124/Models/Cockpit/Instruments/TDR/ctl92-transponder.xml</path>
+	 <offsets>
+		<x-m>0.905</x-m>
+		<y-m>0.330</y-m>
+		<z-m>0.975</z-m>
+		<pitch-deg>-22</pitch-deg>
+	</offsets>
+</model>
+
+</PropertyList>

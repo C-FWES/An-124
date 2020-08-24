@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+	<path>shippingContainerBig.ac</path>
+	
+	<offsets>
+		<x-m>0</x-m>
+		<y-m>0</y-m>
+		<z-m>0.55</z-m>
+		<pitch-deg>0</pitch-deg>
+	</offsets>
+
+  <animation>
+    <type>material</type>
+    <condition>
+      <greater-than>
+        <property>/sim/time/sun-angle-rad</property>
+        <value>1.57</value>
+      </greater-than>
+    </condition>
+    <emission>
+      <red>0.2</red>
+      <green>0.2</green>
+      <blue>0.2</blue>
+    </emission>
+  </animation>
+<animation>
+  <type>scale</type>
+  <x-offset>1</x-offset>
+  <y-offset>1</y-offset>
+  <z-offset>1</z-offset>
+ </animation>
+
+<animation>
+  <type>translate</type>
+
+  <property>/sim/model/cargo/container/position-norm</property>
+ <interpolation>
+    <entry>
+      <ind>1.0</ind>
+      <dep>50.0</dep>
+    </entry>
+    <entry>
+      <ind>0.75</ind>
+      <dep>25</dep>
+    </entry>
+    <entry>
+      <ind>0.25</ind>
+      <dep>15</dep>
+    </entry>
+    <entry>
+      <ind>0.0</ind>
+      <dep>0.0</dep>
+    </entry>
+  </interpolation>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>
+  </center>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+<animation>
+  <type>translate</type>
+  <property>/sim/model/cargo/container/position-norm</property>
+ <interpolation>
+    <entry>
+      <ind>1.0</ind>
+      <dep>3.9</dep>
+    </entry>
+    <entry>
+      <ind>0.75</ind>
+      <dep>3.7</dep>
+    </entry>
+    <entry>
+      <ind>0.35</ind>
+      <dep>3.7</dep>
+    <entry>
+      <ind>0.30</ind>
+      <dep>0.0</dep>
+    </entry>
+    </entry>
+    <entry>
+      <ind>0.0</ind>
+      <dep>0.0</dep>
+    </entry>
+  </interpolation>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>0</y>
+   <z>1</z>
+  </axis>
+ </animation>
+
+
+
+</PropertyList>
