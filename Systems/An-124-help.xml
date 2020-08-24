@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <title>Antonov An-124</title>
+  <line>______________________________________________</line>
+  <key>
+    <name>s</name>
+    <desc>Autostart</desc>
+  </key>
+  <key>
+    <name>d (lowercase)</name>
+    <desc>Open/Close back Cargo door</desc>
+  </key>
+  <key>
+    <name>D (uppercase)</name>
+    <desc>Open/Close front Cargo door</desc>
+  </key>
+  <!--key>
+    <name>Control-G</name>
+    <desc>Tail stanchion up/down</desc>
+  </key-->
+  <key>
+    <name>Delete</name>
+    <desc>Reverser on/off</desc>
+  </key>
+  <key>
+    <name>F9</name>
+    <desc>Map</desc>
+  </key>
+  <key>
+    <name>Control-B</name>
+    <desc>Toggle zpeedbrakes</desc>
+  </key>
+  <key>
+    <name>=</name>
+    <desc>Arm/Disarm Autospoilers</desc>
+  </key>
+  <!--key>
+    <name>y</name>
+    <desc>Toggle Tiller Steering</desc>
+  </key-->
+
+<key>
+<name>Ctrl-y</name>
+<desc>Set Elevator Trim to 0</desc>
+</key>
+
+
+<key>
+<name>l (lower case)</name>
+<desc>Toggle Landing Lights</desc>
+</key>
+
+
+<key>
+<name>L (upper case)</name>
+<desc>Toggle Extra Landing Lights</desc>
+</key>
+
+
+
+  <!--key>
+    <name>&lt;</name>
+    <desc>Change Pilot Engineer View</desc>
+  </key>
+  <key>
+    <name>y</name>
+    <desc>Change Pilot Ramp View</desc>
+  </key-->
+  <text>
+    Wellcome to the Antonov An-124 !
+
+General characteristics
+
+    Crew: 4-6 (pilot, copilot, navigator, senior flight engineer (+flight engineer, radio man) + 2 loadmasters)
+    Capacity: 88 passengers or the hold can take an additional 350 on a palletised seating system
+    Payload: 150,000 kg (330,000 lb)
+    Length: 68.96 m (226 ft 3 in)
+    Wingspan: 73.3 m (240 ft 5 in)
+    Height: 20.78 m (68 ft 2 in)
+    Wing area: 628 m2 (6,760 sq ft)
+    Empty weight: 175,000 kg (385,000 lb)
+    Loaded weight: 405,000 kg (893,000 lb)
+    Useful load: 230,000 kg (508,000 lb)
+    Max. takeoff weight: 405,000 kg (893,000 lb)
+    Powerplant: 4 x Progress D-18T turbofans, 229.5 kN (51,600 lbf) each
+
+Performance
+
+    Maximum speed: 865 km/h (467 kn (537 mph))
+    Cruise speed: 800-850 km/h (430 kn (490 mph))
+    Range: 5,200 km (2,808 nm, 3231 mi)
+    Service ceiling: 12,000 m (39,370 ft)
+    Wing loading: 365 kg/m2 (74.7 lb/sq ft)
+    Thrust/weight: 0.23
+    Take-off run distance (maximum take-off weight): 2,520 m (8,270 ft)
+    Landing roll distance at maximum landing weight: 900 m (3,000 ft)
+
+Cargo and Range:
+
+255736 lbs-1727 nm
+238099 lbs-1997 nm
+229280 lbs-2159 nm
+198416 lbs-2483 nm
+158732 lbs-3239 nm
+ 88184 lbs-4481 nm
+ 77161 lbs-4643 nm
+ 66138 lbs-5021 nm
+ 44092 lbs-5237 nm
+     0 lbs-6263 nm
+
+
+
+  </text>
+</PropertyList>

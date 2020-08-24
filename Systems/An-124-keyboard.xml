@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+  
+
+<keyboard>
+
+
+    <key n="68">
+      <name>D</name>
+      <desc>Front Door</desc>
+      <binding>
+        <command>nasal</command>
+        <script>doors.front.toggle();</script>
+      </binding>
+    </key>
+    
+    <key n="100">
+      <name>d</name>
+      <desc>Back Door</desc>
+      <binding>
+        <command>nasal</command>
+        <script>doors.back.toggle();</script>
+      </binding>
+    </key>
+
+
+<key n="115">
+<name>s</name>
+<desc>autostart / shutdown</desc>
+<binding>
+<command>nasal</command>
+<script>controls.autostart();</script>
+</binding>
+</key>
+
+<key n="61">
+<name>=</name>
+<desc>toggle auto spoilers</desc>
+<binding>
+<command>nasal</command>
+<script>controls.toggleAutoSpoilers();</script>
+</binding>
+</key>
+
+<key n="127">
+<name>Delete</name>
+<desc>Toggle Reversers</desc>
+<binding>
+    <command>property-toggle</command>
+    <property>controls/engines/engine[0]/reverser</property>
+   </binding>
+   <binding>
+    <command>property-toggle</command>
+    <property>controls/engines/engine[1]/reverser</property>
+   </binding>
+   <binding>
+    <command>property-toggle</command>
+    <property>controls/engines/engine[2]/reverser</property>
+   </binding>
+   <binding>
+    <command>property-toggle</command>
+    <property>controls/engines/engine[3]/reverser</property>
+   </binding>
+</key>
+
+<!--key n="7">
+<name>Ctrl-G</name>
+<desc>Toggle tail stanchion</desc>
+<binding>
+<command>nasal</command>
+	<script>
+	if (getprop("/an124/stanchion")) {
+		setprop("/an124/stanchion", 0)
+	} else {
+		setprop("/an124/stanchion", 1)
+	}
+	</script>
+</binding>
+</key-->
+<key n="25">
+	<name>Ctrl-y</name>
+	<desc>Set Elevator Trim to O</desc>
+	<binding>
+	    <command>property-assign</command>
+	   <property>/controls/flight/elevator-trim</property>
+		<value>0</value>
+	   </binding>
+</key>
+
+<key n="265">
+<name>F9</name>
+<desc>Show map</desc>
+<binding>
+<command>dialog-show</command>
+<dialog-name>map</dialog-name>
+</binding>
+</key>
+
+<!--key n="121">
+<name>y</name>
+<desc>Toggle Tiller Steering</desc>
+<binding>
+<command>property-toggle</command>
+<property>/controls/gear/tiller-enabled</property>
+</binding>
+</key-->
+
+
+<key n="25">
+<name>Ctrl-y</name>
+<desc>Set Elevator Trim to O</desc>
+<binding>
+<command>property-assign</command>
+<property>/controls/flight/elevator-trim</property>
+<value>0</value>
+</binding>
+</key>
+
+<key n="108">
+<name>l</name>
+<desc>toggle landing lights</desc>
+<binding>
+<command>nasal</command>
+<script>controls.toggleLandingLights();</script>
+</binding>
+</key>
+
+
+<key n="76">
+<name>L</name>
+<desc>toggle landing lights</desc>
+<binding>
+<command>nasal</command>
+<script>controls.toggleExtraLights();</script>
+</binding>
+</key>
+
+</keyboard>
+   
+  
+</PropertyList>

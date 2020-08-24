@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+
+<!-- An 124 Views -->
+
+<PropertyList>
+
+  <chase-distance-m type="double" archive="y">-100.0</chase-distance-m>
+
+  <view n="0">
+    <name>Cockpit</name>
+    <type>lookfrom</type>
+    <internal type="bool">true</internal>
+    <config>
+	 <!-- x/y/z == right/up/back -->
+      <x-offset-m archive="y" type="double">-0.49</x-offset-m>
+      <y-offset-m archive="y" type="double">4.70</y-offset-m>
+      <z-offset-m archive="y" type="double">-18.49</z-offset-m>
+      <pitch-offset-deg>-14</pitch-offset-deg>
+      <default-field-of-view-deg type="double">62</default-field-of-view-deg>
+      <limits>
+        <enabled type="bool">false</enabled>
+      </limits>
+    </config>
+  </view>
+
+  <view n="1"> <!-- Helicopter view -->
+    <config>
+      <target-z-offset-m archive="y">0</target-z-offset-m>
+      <default-field-of-view-deg type="double">85.0</default-field-of-view-deg>
+      <target-z-offset-m archive="y">22</target-z-offset-m>
+      <target-y-offset-m archive="y">0</target-y-offset-m>
+      <pitch-offset-deg>15</pitch-offset-deg>
+    </config>
+  </view>
+
+  <view n="2"> <!-- Chase view -->
+    <enabled type="bool">true</enabled>
+      <!--default-field-of-view-deg type="double">85.0</default-field-of-view-deg>
+	<target-z-offset-m archive="y">22</target-z-offset-m>
+      <target-y-offset-m archive="y">0</target-y-offset-m-->
+  </view>
+
+  <view n="3"> <!-- Tower view -->
+    <config>
+      <target-z-offset-m archive="y">25</target-z-offset-m>
+    </config>
+  </view>
+
+  <view n="4">
+    <enabled type="bool">true</enabled>
+  </view>
+
+  <view n="5">
+    <enabled type="bool">true</enabled>
+  </view>
+
+  <view n="6">
+    <enabled type="bool">true</enabled>
+  </view>
+
+  <view n="7">
+    <enabled type="bool">true</enabled>
+  </view>
+
+  <view n="101">
+    <name>Cargo Bay View</name>
+     <!-- x/y/z == right/up/back -->
+    <enabled type="bool">true</enabled>
+    <type>lookfrom</type>
+    <internal type="bool">true</internal>
+    <config>
+     <from-model type="bool">true</from-model>
+      <from-model-idx type="int">true</from-model-idx>
+        <x-offset-m archive="y" type="double">-1.4</x-offset-m>
+	<!--x-offset-m archive="y" type="double">29.07</x-offset-m-->
+    	<y-offset-m archive="y" type="double">3</y-offset-m>
+      <z-offset-m archive="y" type="double">7.66</z-offset-m>
+      <pitch-offset-deg archive="y">-12.0</pitch-offset-deg>
+      <default-pitch-deg type="double">-12.0</default-pitch-deg>
+      <default-field-of-view-deg type="double">65</default-field-of-view-deg>
+    </config>
+  </view>
+
+  <view n="102">
+    <name>Copilot View</name>
+    <enabled type="bool">true</enabled>
+    <type>lookfrom</type>
+    <internal type="bool">true</internal>
+    <config>
+     <from-model type="bool">true</from-model>
+		 <from-model-idx type="int">true</from-model-idx>
+     <!-- x/y/z == right/up/back -->
+     <x-offset-m archive="y" type="double">0.44</x-offset-m>
+      <y-offset-m archive="y" type="double">4.70</y-offset-m>
+      <z-offset-m archive="y" type="double">-18.49</z-offset-m>
+      <pitch-offset-deg>-0</pitch-offset-deg>
+      <default-field-of-view-deg type="double">70</default-field-of-view-deg>
+    </config>
+  </view>
+
+  	<view n="102">
+			<name>Navigator</name>
+			<type>lookfrom</type>
+			<internal type="bool">true</internal>
+			<enabled type="bool">true</enabled>
+			<config>
+				<from-model type="bool">true</from-model>
+				<from-model-idx type="int">true</from-model-idx>
+				<!-- x/y/z == right/up/back -->
+				<x-offset-m archive="y" type="double">-0.49</x-offset-m>
+				<y-offset-m archive="y" type="double">4.70</y-offset-m>
+				<z-offset-m archive="y" type="double">-17.49</z-offset-m>
+				<pitch-offset-deg>-0</pitch-offset-deg>
+				<default-field-of-view-deg type="double">62</default-field-of-view-deg>
+			</config>
+		</view>
+</PropertyList>
+
