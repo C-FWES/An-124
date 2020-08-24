@@ -1,0 +1,410 @@
+<?xml version="1.0"?>
+<PropertyList>
+  <name>Cargo</name>
+  <layout>vbox</layout>
+
+  <text>
+    <label>Cargo</label>
+  </text>
+
+  <hrule/>
+
+
+
+
+<group>
+<layout>hbox</layout>
+
+<checkbox>
+<halign>left</halign>
+<label>Locomotive (30 tons, 66138 lbs)</label>
+<property>controls/switches/locomotive</property>
+<binding>
+<command>property-toggle</command>
+<property>controls/switches/locomotive</property>
+</binding>
+</checkbox>
+
+<button>
+	<halign>right</halign>
+	<legend>Doors</legend>
+	<padding>5</padding>
+	<binding>
+		<command>nasal</command>
+		<script>doors.back.toggle();</script>
+	</binding>
+</button>
+
+<button>
+	<halign>right</halign>
+	<legend>Load/Unload</legend>
+	<padding>5</padding>
+	<binding>
+		<command>nasal</command>
+		<script>cargo.locomotive.toggle();</script>
+	</binding>
+</button>
+</group>
+
+ <group>
+	<layout>hbox</layout>
+
+	<checkbox>
+	<halign>left</halign>
+	<label>1st Container (18 tons, 39683 lbs)</label>
+	<property>controls/switches/container</property>
+	<binding>
+	<command>property-toggle</command>
+	<property>controls/switches/container</property>
+	</binding>
+	</checkbox>
+
+	<button>
+		<halign>right</halign>
+		<legend>Doors</legend>
+		<padding>5</padding>
+		<binding>
+			<command>nasal</command>
+			<script>doors.front.toggle();</script>
+		</binding>
+	</button>
+
+	<button>
+		<halign>right</halign>
+		<legend>Load/Unload</legend>
+		<padding>5</padding>
+		<binding>
+			<command>nasal</command>
+			<script>cargo.container.toggle();</script>
+		</binding>
+	</button>
+</group>
+
+<group>
+	<layout>hbox</layout>
+
+	<checkbox>
+	<halign>left</halign>
+	<label>2nd Container (18 tons, 39683 lbs)</label>
+	<property>controls/switches/container2</property>
+	<binding>
+	<command>property-toggle</command>
+	<property>controls/switches/container2</property>
+	</binding>
+	</checkbox>
+
+	<button>
+		<halign>right</halign>
+		<legend>Doors</legend>
+		<padding>5</padding>
+		<binding>
+			<command>nasal</command>
+			<script>doors.front.toggle();</script>
+		</binding>
+	</button>
+
+	<button>
+		<halign>right</halign>
+		<legend>Load/Unload</legend>
+		<padding>5</padding>
+		<binding>
+			<command>nasal</command>
+			<script>cargo.container2.toggle();</script>
+		</binding>
+	</button>
+</group>
+
+
+<group>
+	<layout>hbox</layout>
+
+	<checkbox>
+	<halign>left</halign>
+	<label>3rd Container (18 tons, 39683 lbs)</label>
+	<property>controls/switches/container3</property>
+	<binding>
+	<command>property-toggle</command>
+	<property>controls/switches/container3</property>
+	</binding>
+	</checkbox>
+
+	<button>
+		<halign>right</halign>
+		<legend>Doors</legend>
+		<padding>5</padding>
+		<binding>
+			<command>nasal</command>
+			<script>doors.front.toggle();</script>
+		</binding>
+	</button>
+
+	<button>
+		<halign>right</halign>
+		<legend>Load/Unload</legend>
+		<padding>5</padding>
+		<binding>
+			<command>nasal</command>
+			<script>cargo.container3.toggle();</script>
+		</binding>
+	</button>
+</group>
+
+
+<group>
+	<layout>hbox</layout>
+
+	<checkbox>
+	<halign>left</halign>
+	<label>4th Container (18 tons, 39683 lbs)</label>
+	<property>controls/switches/container4</property>
+	<binding>
+	<command>property-toggle</command>
+	<property>controls/switches/container4</property>
+	</binding>
+	</checkbox>
+
+	<button>
+		<halign>right</halign>
+		<legend>Doors</legend>
+		<padding>5</padding>
+		<binding>
+			<command>nasal</command>
+			<script>doors.front.toggle();</script>
+		</binding>
+	</button>
+
+	<button>
+		<halign>right</halign>
+		<legend>Load/Unload</legend>
+		<padding>5</padding>
+		<binding>
+			<command>nasal</command>
+			<script>cargo.container4.toggle();</script>
+		</binding>
+	</button>
+</group>
+
+<group>
+	<layout>hbox</layout>
+
+	<checkbox>
+	<halign>left</halign>
+	<label>5th Container (18 tons, 39683 lbs)</label>
+	<property>controls/switches/container5</property>
+	<binding>
+	<command>property-toggle</command>
+	<property>controls/switches/container5</property>
+	</binding>
+	</checkbox>
+
+	<button>
+		<halign>right</halign>
+		<legend>Doors</legend>
+		<padding>5</padding>
+		<binding>
+			<command>nasal</command>
+			<script>doors.front.toggle();</script>
+		</binding>
+	</button>
+
+	<button>
+		<halign>right</halign>
+		<legend>Load/Unload</legend>
+		<padding>5</padding>
+		<binding>
+			<command>nasal</command>
+			<script>cargo.container5.toggle();</script>
+		</binding>
+	</button>
+</group>
+
+<group>
+	<layout>hbox</layout>
+
+	<checkbox>
+	<halign>left</halign>
+	<label>6th Container (18 tons, 39683 lbs)</label>
+	<property>controls/switches/container6</property>
+	<binding>
+	<command>property-toggle</command>
+	<property>controls/switches/container6</property>
+	</binding>
+	</checkbox>
+
+	<button>
+		<halign>right</halign>
+		<legend>Doors</legend>
+		<padding>5</padding>
+		<binding>
+			<command>nasal</command>
+			<script>doors.front.toggle();</script>
+		</binding>
+	</button>
+
+	<button>
+		<halign>right</halign>
+		<legend>Load/Unload</legend>
+		<padding>5</padding>
+		<binding>
+			<command>nasal</command>
+			<script>cargo.container6.toggle();</script>
+		</binding>
+	</button>
+</group>
+
+ <group>
+	<layout>hbox</layout>
+
+	<checkbox>
+	<halign>left</halign>
+	<label>1st Helicopter U60 (4.8 tons, 10624 lbs)</label>
+	<property>controls/switches/helicopter</property>
+	<binding>
+	<command>property-toggle</command>
+	<property>controls/switches/helicopter</property>
+	</binding>
+	</checkbox>
+
+	<button>
+		<halign>right</halign>
+		<legend>Doors</legend>
+		<padding>5</padding>
+		<binding>
+			<command>nasal</command>
+			<script>doors.back.toggle();</script>
+		</binding>
+	</button>
+
+	<button>
+		<halign>right</halign>
+		<legend>Load/Unload</legend>
+		<padding>5</padding>
+		<binding>
+			<command>nasal</command>
+			<script>cargo.helicopter.toggle();</script>
+		</binding>
+	</button>
+</group>
+
+<group>
+	<layout>hbox</layout>
+
+	<checkbox>
+	<halign>left</halign>
+	<label>2nd Helicopter U60 (4.8 tons, 10624 lbs)</label>
+	<property>controls/switches/helicopter2</property>
+	<binding>
+	<command>property-toggle</command>
+	<property>controls/switches/helicopter2</property>
+	</binding>
+	</checkbox>
+
+	<button>
+		<halign>right</halign>
+		<legend>Doors</legend>
+		<padding>5</padding>
+		<binding>
+			<command>nasal</command>
+			<script>doors.back.toggle();</script>
+		</binding>
+	</button>
+
+	<button>
+		<halign>right</halign>
+		<legend>Load/Unload</legend>
+		<padding>5</padding>
+		<binding>
+			<command>nasal</command>
+			<script>cargo.helicopter2.toggle();</script>
+		</binding>
+	</button>
+</group>
+
+
+<group>
+	<layout>hbox</layout>
+
+	<checkbox>
+	<halign>left</halign>
+	<label>3rd Helicopter U60 (4.8 tons, 10624 lbs)</label>
+	<property>controls/switches/helicopter3</property>
+	<binding>
+	<command>property-toggle</command>
+	<property>controls/switches/helicopter3</property>
+	</binding>
+	</checkbox>
+
+	<button>
+		<halign>right</halign>
+		<legend>Doors</legend>
+		<padding>5</padding>
+		<binding>
+			<command>nasal</command>
+			<script>doors.back.toggle();</script>
+		</binding>
+	</button>
+
+	<button>
+		<halign>right</halign>
+		<legend>Load/Unload</legend>
+		<padding>5</padding>
+		<binding>
+			<command>nasal</command>
+			<script>cargo.helicopter3.toggle();</script>
+		</binding>
+	</button>
+</group>
+
+<group>
+	<layout>hbox</layout>
+	<checkbox>
+	<halign>left</halign>
+	<label>4th Helicopter U60 (4.8 tons, 10624 lbs)</label>
+	<property>controls/switches/helicopter4</property>
+	<binding>
+	<command>property-toggle</command>
+	<property>controls/switches/helicopter4</property>
+	</binding>
+	</checkbox>
+
+	<button>
+		<halign>right</halign>
+		<legend>Doors</legend>
+		<padding>5</padding>
+		<binding>
+			<command>nasal</command>
+			<script>doors.back.toggle();</script>
+		</binding>
+	</button>
+
+	<button>
+		<halign>right</halign>
+		<legend>Load/Unload</legend>
+		<padding>5</padding>
+		<binding>
+			<command>nasal</command>
+			<script>cargo.helicopter4.toggle();</script>
+		</binding>
+	</button>
+</group>
+
+
+  <hrule/>
+
+  <group>
+    <layout>hbox</layout>
+    <empty><stretch>true</stretch></empty>
+
+    <button>
+      <legend>Close</legend>
+      <default>true</default>
+      <key>Esc</key>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+    </button>
+
+    <empty><stretch>true</stretch></empty>
+  </group>
+
+</PropertyList>

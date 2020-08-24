@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+<default>
+<menu n="100">
+<enabled type="bool">true</enabled>
+<label>An-124</label>
+<item>
+<label>Autostart</label>
+<binding>
+<command>nasal</command>
+<script>controls.autostart();</script>
+</binding>
+</item>
+
+<!--item >
+<label>Pushback</label>
+<name>pushback</name>
+<binding>
+<command>dialog-show</command>
+<dialog-name>pushback</dialog-name>
+</binding>
+</item-->
+
+<item>
+<label>Select Livery</label>
+<binding>
+<command>nasal</command>
+<script>aircraft.livery.dialog.toggle()</script>
+</binding>
+</item>
+
+<!--item>
+<label>Tiller Steering</label>
+<binding>
+<command>nasal</command>
+<script>dialogs.tiller_steering.open()</script>
+</binding>
+</item-->
+
+<item>
+<label>Show/Hide Yokes</label>
+<binding>
+<command>property-toggle</command>
+<property>sim/model/hide-yoke</property>
+</binding>
+</item>
+
+<!--item>
+<label>Announcements</label>
+<binding>
+<command>nasal</command>
+<script>
+var mal = gui.Dialog.new("/sim/gui/dialogs/announcements/menu/dialog", 
+                              "Aircraft/An-124/Dialogs/announcements-dialog.xml");
+mal.open();
+</script>
+</binding>
+</item-->
+
+<item>
+<label>Cargo</label>
+<binding>
+
+<command>nasal</command>
+<script>
+var mal = gui.Dialog.new("/sim/gui/dialogs/operations/menu/dialog", 
+                              "Aircraft/An-124/Dialogs/cargo-dialog.xml");
+
+mal.open();
+</script>
+
+</binding>
+</item>
+
+
+<!--item>
+<label>Airport Operations</label>
+<binding>
+
+<command>nasal</command>
+<script>
+var mal = gui.Dialog.new("/sim/gui/dialogs/operations/menu/dialog", 
+                              "Aircraft/An-124/Dialogs/airportoperations-dialog.xml");
+
+mal.open();
+</script>
+
+</binding>
+</item-->
+
+
+
+
+<item>
+<label>Fuel Dump</label>
+<binding>
+<command>nasal</command>
+<script>
+var mal = gui.Dialog.new("/sim/gui/dialogs/dump/menu/dialog", "Aircraft/An-124/Dialogs/fueldump-dialog.xml");
+mal.open();
+</script>
+</binding>
+</item>
+
+<item>
+<name>fuel</name>
+<label>Fuel Truck Controls</label>
+<binding>
+<command>nasal</command>
+<script>
+
+var fuel = gui.Dialog.new("sim/gui/dialogs/fuel/dialog", "Aircraft/An-124/Dialogs/fuel-truck.xml");
+fuel.open();
+
+</script>
+</binding>
+</item>
+
+
+</menu>
+</default>
+
+</PropertyList>
