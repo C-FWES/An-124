@@ -1,0 +1,12 @@
+This project is, so far I can tell, completely free, and falls under the GNU GPL license.
+
+This project is based upon the old Antonov 225 model, and also uses materials from different Flightgear aircraft: the Antonov 12, Boing 777, Airbus 340-HGW, Boeing 747-8i, Cessna Bravo, the UH-60 and other Flightgear free materials. The containers come from wlbragg. The overhead panel is taken from HerbyW new 225 and will be developed.
+
+The only doubt about the license is relative to the liveries, which were taken from internet images, with no copiright indication. Nevertheless they were also severely transformed to be used with this model.
+
+The rest is Andinos work.
+
+
+
+
+

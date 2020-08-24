@@ -1,0 +1,335 @@
+<!--  Antonov An-124 yasim configuration file
+
+-->
+
+<airplane mass="385000" version="YASIM_VERSION_CURRENT">
+
+<!-- Approach configuration -->
+ <approach speed="150" aoa="2.0" fuel="0.8">
+  <control-setting axis="/controls/engines/engine[0]/throttle" value="0.5"/>
+  <control-setting axis="/controls/engines/engine[1]/throttle" value="0.5"/>
+  <control-setting axis="/controls/engines/engine[2]/throttle" value="0.5"/>
+  <control-setting axis="/controls/engines/engine[3]/throttle" value="0.5"/>
+  <control-setting axis="/controls/flight/flaps" value="1.0"/>
+  <control-setting axis="/controls/flight/slats" value="1.0"/>
+  <control-setting axis="/controls/gear/gear-down" value="1"/>
+ </approach>
+
+<!-- Cruise configuration -->
+ <cruise speed="458" alt="36000" fuel="0.8">
+  <control-setting axis="/controls/engines/engine[0]/throttle" value="0.85"/>
+  <control-setting axis="/controls/engines/engine[1]/throttle" value="0.85"/>
+  <control-setting axis="/controls/engines/engine[2]/throttle" value="0.85"/>
+  <control-setting axis="/controls/engines/engine[3]/throttle" value="0.85"/>
+  <control-setting axis="/controls/flight/flaps" value="0.0"/>
+  <control-setting axis="/controls/flight/slats" value="0.0"/>
+  <control-setting axis="/controls/gear/gear-down" value="0"/>
+ </cruise>
+
+ <cockpit x="19.25" y="0.0" z="4.51"/>
+
+<!--Fuselage Front-->
+
+<fuselage ax="26.24" ay="0" az="-0.64" bx="18.0" by="0.00" bz="1.1"
+          width="8.0" taper="0.0" midpoint="1.0"/>
+
+<!--Fuselage central-->
+
+<fuselage ax="18.1" ay="0" az="1.1" bx="-20.0" by="0.00" bz="1.1"
+          width="8" taper="1.0" midpoint="0.5"/>
+
+
+<fuselage ax="-20.0" ay="0" az="1.1" bx="-37.0" by="0.00" bz="1.3"
+          width="8" taper="0.0" midpoint="0.0"/>
+
+
+<!-- Wing -->
+ <wing x="-0.67" y="3.25" z="4.4" taper="0.2" incidence="3.0" twist="-3.0"
+      length="37.9" chord="15.0" sweep="24.5" dihedral="-3.5" camber="0.0">
+  <stall aoa="13" width="2" peak="1.5"/>
+  <flap0 start="0.0" end="0.55" lift="1.5" drag="1.9"/>
+  <flap1 start="0.58" end="0.98" lift="1.25" drag="1.9"/>
+  <spoiler start="0.078" end="0.554" lift="0.7" drag="2"/>
+  <control-input axis="/controls/flight/flaps" control="FLAP0"/>
+  <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
+  <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
+  <control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
+  <control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
+  <control-input axis="/controls/flight/speedbrake" control="SPOILER"/>
+ <control-output control="SPOILER" prop="/surface-positions/spoiler-pos-norm"/>
+  <control-speed control="SPOILER" transition-time="1"/>
+  <control-speed control="FLAP0" transition-time="10"/>
+</wing>
+
+
+<!-- Horizontal Stabilizer - Elevator -->
+<hstab x="-36" y="1.52" z="4.72" chord="9.18" length="13" taper=".29"
+       sweep="24" dihedral="0" camber="-0.1" effectiveness="2.3">
+  <stall aoa="15" width="2" peak="1.5"/>
+  <flap0 start="0" end="1" lift="1.4" drag="1.9"/>
+  <control-input axis="/controls/flight/elevator" control="FLAP0"/>
+  <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
+  <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+</hstab>
+
+<!-- Vertical Stabilizer - Rudder -->
+<vstab x="-31" y="0.00" z="4.66728" chord="13.16" length="14.7" taper="0.3"
+       sweep="34">
+  <stall aoa="15" width="2" peak="1.5"/>
+  <flap0 start="0" end="1" lift="1.4" drag="1.9"/>
+  <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
+  <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
+  <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"
+		  min="1" max="-1"/>
+</vstab>
+
+
+<!-- Engines in fuselage -->
+<!-- inner left -->
+<fuselage ax="6.1" ay="9.9" az="0.73" bx="1.2" by="9.9" bz="0.73"
+          width="2.8" taper="1.0"/>
+<!-- inner right -->
+<fuselage ax="6.1" ay="-9.9" az="0.73" bx="1.2" by="-9.9" bz="0.73"
+          width="2.8" taper="1.0"/>
+<!-- outer left-->
+<fuselage ax="1.8" ay="17.63" az="0.32" bx="-3.1" by="17.63" bz="0.32"
+          width="2.8" taper="1.0"/>
+<!-- outer right -->
+<fuselage ax="1.8" ay="-17.63" az="0.32" bx="-3.1" by="-17.63" bz="0.32"
+          width="2.8" taper="1.0"/>
+
+
+<!-- Engines performance -->
+
+<jet x="1.2" y="9.9" z="0.73"
+     n1-idle="30" n2-idle="60" n1-max="92.5" n2-max="97.5"
+     mass="9039"
+     thrust="51670"
+     tsfc="0.46"
+     epr="5.66"><!-- mass of reversers about 350kg (770lbs) -->
+	<actionpt x="-13.83" y="5.22" z="0.58"/>
+  <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
+   <control-input axis="/controls/engines/engine[0]/reverser" control="REVERSE_THRUST"/>
+ <control-output control="REVERSE_THRUST" prop="/surface-positions/reverser-norm[0]"/>
+ <control-speed control="REVERSE_THRUST" transition-time="1.5"/>
+</jet>
+
+<jet x="1.2" y="-9.9" z="0.73"
+     n1-idle="30" n2-idle="60" n1-max="92.5" n2-max="97.5"
+     mass="9039"
+     thrust="51670"
+     tsfc="0.46"
+     epr="5.66"><!-- mass of reversers about 350kg (770lbs) -->
+	<actionpt x="-13.83" y="3.25" z="0.58"/>
+  <control-input axis="/controls/engines/engine[1]/throttle" control="THROTTLE"/>
+ <control-input axis="/controls/engines/engine[1]/reverser" control="REVERSE_THRUST"/>
+ <control-output control="REVERSE_THRUST" prop="/surface-positions/reverser-norm[1]"/>
+ <control-speed control="REVERSE_THRUST" transition-time="1.5"/>
+</jet>
+
+<jet x="-3.1" y="17.63" z="0.32"
+     n1-idle="30" n2-idle="60" n1-max="92.5" n2-max="97.5"
+     mass="9039"
+     thrust="51670"
+     tsfc="0.46"
+     epr="5.66"><!-- mass of reversers about 350kg (770lbs) -->
+	<actionpt x="-13.83" y="-3.25" z="0.58"/>
+  <control-input axis="/controls/engines/engine[2]/throttle" control="THROTTLE"/>
+ <control-input axis="/controls/engines/engine[2]/reverser" control="REVERSE_THRUST"/>
+ <control-output control="REVERSE_THRUST" prop="/surface-positions/reverser-norm[2]"/>
+ <control-speed control="REVERSE_THRUST" transition-time="1.5"/>
+
+</jet>
+
+<jet x="-3.1" y="-17.63" z="0.32"
+     n1-idle="30" n2-idle="60" n1-max="92.5" n2-max="97.5"
+     mass="9039"
+     thrust="51670"
+     tsfc="0.46"
+     epr="5.66"><!-- mass of reversers about 350kg (770lbs) -->
+	<actionpt x="-13.83" y="-5.22" z="0.58"/>
+    <control-input axis="/controls/engines/engine[3]/throttle" control="THROTTLE"/>
+ <control-input axis="/controls/engines/engine[3]/reverser" control="REVERSE_THRUST"/>
+ <control-output control="REVERSE_THRUST" prop="/surface-positions/reverser-norm[3]"/>
+ <control-speed control="REVERSE_THRUST" transition-time="1.5"/>
+</jet>
+
+
+
+
+<!-- Landing Gear -->
+<!-- Front Left -->
+ <gear x="16.0" y="1.0" z="-4.7" retract-time="10" compression="0.2" spring="1.1">
+  <control-input axis="/controls/flight/rudder" control="STEER"
+    src0="-1.0" dst0="-0.8052" src1="1.0" dst1="0.7664"/>
+  <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+  <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+  <control-speed control="EXTEND" transition-time="10"/>
+  <control-speed control="BRAKE" transition-time="0.7"/>
+  <control-speed control="STEER" transition-time="2.5"/>
+  <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
+  <control-output control="STEER" prop="/gear/gear[0]/steering-norm"/>
+ </gear>
+
+<!-- Front Right -->
+ <gear x="16.0" y="-1.0" z="-4.7" retract-time="10" compression="0.2" spring="1.1">
+  <control-input axis="/controls/flight/rudder" control="STEER"
+    src0="-1.0" dst0="-0.7664" src1="1.0" dst1="0.8052"/>
+  <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+  <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+  <control-speed control="EXTEND" transition-time="10"/>
+  <control-speed control="BRAKE" transition-time="0.7"/>
+  <control-speed control="STEER" transition-time="2.5"/>
+  <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
+  <control-output control="STEER" prop="/gear/gear[1]/steering-norm"/>
+ </gear>
+
+
+
+<!-- Main Left -->
+ <gear x="-3.09" y="3.2" z="-4.8" retract-time="10" compression="0.5" spring="0.6">
+  <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+  <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+  <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+  <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+  <control-speed control="EXTEND" transition-time="10"/>
+  <control-speed control="BRAKE" transition-time="0.7"/>
+  <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>
+ </gear>
+
+ <gear x="-4.74" y="3.2" z="-4.8" retract-time="10" compression="0.5" spring="0.6">
+  <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+  <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+  <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+  <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+  <control-speed control="EXTEND" transition-time="10"/>
+  <control-speed control="BRAKE" transition-time="0.7"/>
+  <control-output control="EXTEND" prop="/gear/gear[3]/position-norm"/>
+ </gear>
+
+ <gear x="-6.40" y="3.2" z="-4.8" retract-time="10" compression="0.5" spring="0.6">
+  <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+  <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+  <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+  <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+  <control-speed control="EXTEND" transition-time="10"/>
+  <control-speed control="BRAKE" transition-time="0.7"/>
+  <control-output control="EXTEND" prop="/gear/gear[4]/position-norm"/>
+ </gear>
+
+ <gear x="-8.13" y="3.2" z="-4.8" retract-time="10" compression="0.5" spring="0.6">
+  <control-input axis="/controls/flight/rudder" control="STEER"
+    src0="-1" dst0="-0.1453" src1="1.0" dst1="0.1135"
+    invert="true"/>
+  <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+  <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+  <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+  <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+  <control-speed control="EXTEND" transition-time="10"/>
+  <control-speed control="BRAKE" transition-time="0.7"/>
+  <control-speed control="STEER" transition-time="15.7"/>
+  <control-output control="EXTEND" prop="/gear/gear[5]/position-norm"/>
+  <control-output control="STEER" prop="/gear/gear[5]/steering-norm"/>
+ </gear>
+
+ <gear x="-9.86" y="3.2" z="-4.8" retract-time="10" compression="0.5" spring="0.6">
+  <control-input axis="/controls/flight/rudder" control="STEER"
+    src0="-1" dst0="-0.2169" src1="1.0" dst1="0.1694"
+    invert="true"/>
+  <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+  <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+  <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+  <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+  <control-speed control="EXTEND" transition-time="10"/>
+  <control-speed control="BRAKE" transition-time="0.7"/>
+  <control-speed control="STEER" transition-time="10.5"/>
+  <control-output control="EXTEND" prop="/gear/gear[6]/position-norm"/>
+  <control-output control="STEER" prop="/gear/gear[6]/steering-norm"/>
+ </gear>
+
+
+
+<!-- Main Right -->
+ <gear x="-3.09" y="-3.2" z="-4.8" retract-time="10" compression="0.5" spring="0.6">
+  <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+  <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+  <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+  <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+  <control-speed control="EXTEND" transition-time="10"/>
+  <control-speed control="BRAKE" transition-time="0.7"/>
+  <control-output control="EXTEND" prop="/gear/gear[7]/position-norm"/>
+ </gear>
+
+ <gear x="-4.74" y="-3.2" z="-4.8" retract-time="10" compression="0.5" spring="0.6">
+  <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+  <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+  <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+  <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+  <control-speed control="EXTEND" transition-time="10"/>
+  <control-speed control="BRAKE" transition-time="0.7"/>
+  <control-output control="EXTEND" prop="/gear/gear[8]/position-norm"/>
+ </gear>
+
+ <gear x="-6.40" y="-3.2" z="-4.8" retract-time="10" compression="0.5" spring="0.6">
+  <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+  <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+  <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+  <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+  <control-speed control="EXTEND" transition-time="10"/>
+  <control-speed control="BRAKE" transition-time="0.7"/>
+  <control-output control="EXTEND" prop="/gear/gear[9]/position-norm"/>
+ </gear>
+
+ <gear x="-8.13" y="-3.2" z="-4.8" retract-time="10" compression="0.5" spring="0.6">
+  <control-input axis="/controls/flight/rudder" control="STEER"
+    src0="-1" dst0="-0.1135" src1="1.0" dst1="0.1453"
+    invert="true"/>
+  <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+  <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+  <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+  <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+  <control-speed control="EXTEND" transition-time="10"/>
+  <control-speed control="BRAKE" transition-time="0.7"/>
+  <control-speed control="STEER" transition-time="15.7"/>
+  <control-output control="EXTEND" prop="/gear/gear[10]/position-norm"/>
+  <control-output control="STEER" prop="/gear/gear[10]/steering-norm"/>
+ </gear>
+
+ <gear x="-9.86" y="-3.2" z="-4.8" retract-time="10" compression="0.5" spring="0.6">
+  <control-input axis="/controls/flight/rudder" control="STEER"
+    src0="-1" dst0="-0.1694" src1="1.0" dst1="0.2169"
+    invert="true"/>
+  <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+  <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+  <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+  <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+  <control-speed control="EXTEND" transition-time="10"/>
+  <control-speed control="BRAKE" transition-time="0.7"/>
+  <control-speed control="STEER" transition-time="10.5"/>
+  <control-output control="EXTEND" prop="/gear/gear[11]/position-norm"/>
+  <control-output control="STEER" prop="/gear/gear[11]/steering-norm"/>
+ </gear>
+
+
+<!-- Fuel tanks -->
+<!-- Wing Tanks -->
+ <tank x="-1.75" y="7.11" z="4.00" capacity="82088"/>
+ <tank x="-3.18" y="11.4" z="3.63" capacity="72088"/>
+ <tank x="-5.86" y="15.53" z="3.35" capacity="52088"/>
+ <tank x="-7.67" y="20.14" z="2.78" capacity="32088"/>
+ <tank x="-10.97" y="27.09" z="2.13" capacity="22088"/>
+ <tank x="-1.75" y="-7.11" z="4.00" capacity="82088"/>
+ <tank x="-3.18" y="-11.4" z="3.63" capacity="72088"/>
+ <tank x="-5.86" y="-15.53" z="3.35" capacity="52088"/>
+ <tank x="-7.67" y="-20.14" z="2.78" capacity="32088"/>
+ <tank x="-10.97" y="-27.09" z="2.13" capacity="22088"/>
+
+
+<!-- Cargo -->
+<weight x="20" y="0" z="0" mass-prop="/sim/weight[0]/weight-lb"/>
+<weight x="0" y="0" z="0" mass-prop="/sim/weight[1]/weight-lb"/>
+
+<!-- Ballast -->
+<ballast x="18.0" y="0" z="4" mass="120000"/>
+
+</airplane>
