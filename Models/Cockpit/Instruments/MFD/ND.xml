@@ -1,0 +1,45 @@
+<!--
+Syd Adams
+
+-->
+
+<PropertyList>
+
+
+
+ <animation>
+  <type>scale</type>
+  <x-offset>0.85</x-offset>
+  <y-offset>0.85</y-offset>
+  <z-offset>0.85</z-offset>
+ </animation>
+
+
+    <panel>
+        <path>Aircraft/An-124/Models/Cockpit/Instruments/MFD/mfdtext-panel.xml</path>
+        <bottom-left>
+            <x-m>0.005</x-m>
+            <y-m>-0.090</y-m>
+            <z-m>-0.087</z-m>
+        </bottom-left>
+        <bottom-right>
+            <x-m>0.005</x-m>
+            <y-m>0.090</y-m>
+            <z-m>-0.087</z-m>
+        </bottom-right>
+        <top-left>
+            <x-m>0.005</x-m>
+            <y-m>-0.090</y-m>
+            <z-m>0.094</z-m>
+        </top-left>
+    </panel>
+
+
+<!-- LoD -->
+ <animation>
+   <type>range</type>
+   <min-m>0</min-m>
+   <max-m>20</max-m>
+ </animation>
+
+</PropertyList>

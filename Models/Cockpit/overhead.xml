@@ -1,0 +1,17 @@
+<PropertyList>
+
+<path>overhead.ac</path>
+
+  <animation>
+    <type>material</type>
+    
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.25 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+    </emission>
+  </animation>
+
+
+</PropertyList>

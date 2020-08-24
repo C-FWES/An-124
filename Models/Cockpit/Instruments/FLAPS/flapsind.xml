@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!--
+    #############################################################################
+  Указатель стабилизатора
+    #############################################################################	  
+    -->
+
+
+<PropertyList>
+ <path>flapsind.ac</path>
+<!-- Internal instruments lighting 
+<animation>
+  <type>material</type>
+  <object-name>base</object-name>
+  <object-name>needle</object-name>
+  <emission>
+    <red-prop>tu154/light/instruments/int-red</red-prop>
+    <green-prop>tu154/light/instruments/int-green</green-prop>
+    <blue-prop>tu154/light/instruments/int-blue</blue-prop>
+  </emission>
+</animation>
+-->
+
+<!-- Internal instruments lighting -->
+<animation>
+  <type>material</type>
+  <object-name>disk1</object-name>
+  <object-name>disk2</object-name>
+  <object-name>rect</object-name>
+<emission>
+    <red>0.5</red>
+    <green>0.5</green>
+    <blue>0.5</blue>
+	<factor-prop>controls/lighting/instruments-norm</factor-prop>
+  </emission>
+
+</animation>
+  
+<!--Стрелка-->
+<animation>
+    <type>rotate</type>
+    <object-name>rect</object-name>
+    <!--<property>/surface-positions/pitch-trim-pos-norm</property>-->
+	<property>surface-positions/flap-pos-norm</property>
+    <interpolation>
+	<entry><ind>0.0</ind>	<dep>-60.0</dep></entry>
+	<entry><ind>0.250</ind>	<dep>-45.0</dep></entry>
+	<entry><ind>0.375</ind>	<dep>-25.0</dep></entry>
+	<entry><ind>0.500</ind>	<dep>-10.0</dep></entry>
+	<entry><ind>0.625</ind>	<dep>10.0</dep></entry>
+	<entry><ind>0.750</ind>	<dep>25.0</dep></entry>
+	<entry><ind>0.875</ind>	<dep>45.0</dep></entry>
+	<entry><ind>1.000</ind>	<dep>60.0</dep></entry>
+    </interpolation>
+		<center>
+	   <x-m>0.000</x-m>
+	   <y-m>-0.005</y-m>
+ 		  <z-m>0.000</z-m>
+		</center>
+    <axis>
+      <x>-1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+</animation>
+
+<!-- LoD -->
+ <animation>
+   <type>range</type>
+   <min-m>0</min-m>
+   <max-m>30</max-m>
+ </animation>
+
+
+</PropertyList>

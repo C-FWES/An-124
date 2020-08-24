@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+<!-- LIGHTS -->
+
+<!--landing-->
+
+	
+<model>
+	<path>Aircraft/An-124/Models/lights/landinglight.xml</path>
+	<name>RightLandinglight</name>
+	<condition>
+	<equals>
+		<property>controls/lighting/landing-light[0]</property>
+		<value>1</value>
+	</equals>
+	</condition>     
+	<offsets>
+	<x-m>-17.98</x-m>
+	<y-m>3.61</y-m>
+	<z-m>-1.44</z-m>   
+	</offsets>
+</model>
+
+<model>
+	<path>Aircraft/An-124/Models/lights/landinglight.xml</path>
+	<name>LeftLandinglight</name>
+	<condition>
+	<equals>
+	<property>controls/lighting/landing-light[1]</property>
+	<value>1</value>
+	</equals>
+	</condition>     
+	<offsets>
+	<x-m>-17.98</x-m>
+	<y-m>-3.61</y-m>
+	<z-m>-1.44</z-m>  
+	</offsets>
+</model>
+
+<model>
+	<path>Aircraft/An-124/Models/lights/landinglight.xml</path>
+	<name>RightwingLandinglight</name>
+	<condition>
+	<equals>
+		<property>controls/lighting/landing-light[2]</property>
+		<value>1</value>
+	</equals>
+	</condition>     
+	<offsets>
+	<x-m>2.88</x-m>
+	<y-m>14.24</y-m>
+	<z-m>2.62</z-m>   
+	</offsets>
+</model>
+
+<model>
+	<path>Aircraft/An-124/Models/lights/landinglight.xml</path>
+	<name>LeftwingLandinglight</name>
+	<condition>
+	<equals>
+	<property>controls/lighting/landing-light[3]</property>
+	<value>1</value>
+	</equals>
+	</condition>     
+	<offsets>
+	<x-m>2.88</x-m>
+	<y-m>-14.24</y-m>
+	<z-m>2.62</z-m>   
+	</offsets>
+</model>
+
+
+
+
+
+
+<model>
+    <path>Aircraft/An-124/Models/lights/RedLight.xml</path>
+    <name>Redlight</name>     
+    <offsets>
+   			 <x-m>13.73</x-m>
+			<y-m>-35.53</y-m>
+			<z-m>1.08</z-m>    
+    </offsets>
+    </model>
+
+<model>
+    <path>Aircraft/An-124/Models/lights/GreenLight.xml</path>
+    <name>Greenlight</name>     
+    <offsets>
+   			 <x-m>13.73</x-m>
+			<y-m>35.53</y-m>
+			<z-m>1.08</z-m> 
+    </offsets>
+    </model>
+
+<!--beacon-->
+
+
+<model>
+<path>Aircraft/An-124/Models/lights/beacon.xml</path>
+<name>Beacon</name>     
+<offsets>
+	<x-m>-4.30</x-m>
+	<y-m>0</y-m>
+	<z-m>5.68</z-m>
+</offsets>
+</model>
+
+</PropertyList>

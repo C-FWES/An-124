@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">Volga Dnepr</name>
+            <texture>/../Models/Liveries/Volga.png</texture>
+        </livery>
+    </model>
+</sim>
+</PropertyList>

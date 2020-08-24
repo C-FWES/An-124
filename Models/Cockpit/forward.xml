@@ -1,0 +1,429 @@
+<PropertyList>
+
+<path>forward.ac</path>
+
+
+  <animation>
+    <type>material</type>
+    <object-name>forward_panel</object-name>
+    <object-name>gear_handle</object-name>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.25 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+    </emission>
+  </animation>
+
+
+<!--Pilot-->
+
+<!-- attitude indicator  -->
+<model>
+  <name>ai</name>
+  <path>Aircraft/An-124/Models/Cockpit/Instruments/ai/ai.xml</path>
+  <offsets>
+		<x-m>0.689</x-m>
+		<y-m>-0.51</y-m>
+		<z-m>0.72</z-m>
+		<pitch-deg>-22</pitch-deg>
+	</offsets>
+</model>
+
+<!-- autopilot  -->
+<model>
+  <name>ap</name>
+  <path>Aircraft/An-124/Models/Cockpit/Instruments/ap/ap.xml</path>
+  <offsets>
+		<x-m>0.689</x-m>
+		<y-m>-0.51</y-m>
+		<z-m>0.80</z-m>
+		<pitch-deg>-22</pitch-deg>
+	</offsets>
+</model>
+
+
+<!-- Horizontal Situation Indicator  -->
+
+<model>
+  <name>hsi</name>
+  <path>Aircraft/An-124/Models/Cockpit/Instruments/HSI/hsi.xml</path>
+  <offsets>
+		<x-m>0.689</x-m>
+		<y-m>-0.66</y-m>
+		<z-m>0.66</z-m>
+		<pitch-deg>-22</pitch-deg>
+	</offsets>
+</model>
+
+<!--model>
+  <name>hsi</name>
+  <path>Aircraft/An-124/Models/Cockpit/Instruments/pnp/pnp.xml</path>
+  <offsets>
+		<x-m>0.689</x-m>
+		<y-m>-0.66</y-m>
+		<z-m>0.66</z-m>
+		<pitch-deg>-22</pitch-deg>
+	</offsets>
+</model-->
+
+
+<!-- speed indicator  -->
+<model>
+  <name>alt</name>
+  <path>Aircraft/An-124/Models/Cockpit/Instruments/asi/asi_l.xml</path>
+  <offsets>
+		<x-m>0.661</x-m>
+		<y-m>-0.29</y-m>
+		<z-m>0.76</z-m>
+		<pitch-deg>-22</pitch-deg>
+	</offsets>
+</model>
+
+
+<!-- altimeter  -->
+<model>
+  <name>alt</name>
+  <path>Aircraft/An-124/Models/Cockpit/Instruments/ALT/alt.xml</path>
+  <offsets>
+		<x-m>0.689</x-m>
+		<y-m>-0.29</y-m>
+		<z-m>0.66</z-m>
+		<pitch-deg>-22</pitch-deg>
+	</offsets>
+</model>
+
+<!-- altitude set  -->
+<model>
+  <name>altset</name>
+  <path>Aircraft/An-124/Models/Cockpit/Instruments/alt-set/alt-set.xml</path>
+  <offsets>
+		<x-m>0.710</x-m>
+		<y-m>-0.29</y-m>
+		<z-m>0.605</z-m>
+		<pitch-deg>-22</pitch-deg>
+	</offsets>
+</model>
+
+
+<!-- DME  -->
+<model>
+  <name>dme</name>
+  <path>Aircraft/An-124/Models/Cockpit/Instruments/DME/dme.xml</path>
+  <offsets>
+		<x-m>0.689</x-m>
+		<y-m>-0.40</y-m>
+		<z-m>0.80</z-m>
+		<pitch-deg>-22</pitch-deg>
+	</offsets>
+</model>
+
+
+<!-- Vertical Speed -->
+<model>
+  <name>var</name>
+  <path>Aircraft/An-124/Models/Cockpit/Instruments/var/var-75.xml</path>
+  <offsets>
+		<x-m>0.689</x-m>
+		<y-m>-0.40</y-m>
+		<z-m>0.72</z-m>
+		<pitch-deg>-22</pitch-deg>
+	</offsets>
+</model>
+
+
+<!-- vor -adf-->
+
+<model>
+  <name>iku</name>
+  <path>Aircraft/An-124/Models/Cockpit/Instruments/iku-1/iku-1_l.xml</path>
+  <offsets>
+		<x-m>0.71</x-m>
+		<y-m>-0.40</y-m>
+		<z-m>0.625</z-m>
+		<pitch-deg>-15</pitch-deg>
+	</offsets>
+</model>
+
+
+<!-- GEAR HANDLE -->
+
+<animation>
+	<type>pick</type>
+	<object-name>gear_handle</object-name>
+	<action>
+            <button>0</button>
+            <binding>
+                <command>nasal</command>
+                <script>
+			controls.gearDown(-1);
+		</script>
+            </binding>
+            <mod-up>
+                <binding>
+                    <command>nasal</command>
+                    <script>controls.gearDown(0)</script>
+                </binding>
+            </mod-up>
+        </action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>gear_handle</object-name>
+	<action>
+            <button>1</button>
+            <binding>
+                <command>nasal</command>
+                <script>
+			controls.gearDown(1);
+		</script>
+            </binding>
+            <mod-up>
+                <binding>
+                    <command>nasal</command>
+                    <script>controls.gearDown(0)</script>
+                </binding>
+            </mod-up>
+        </action>
+</animation>
+
+<animation>
+	<type>rotate</type>
+	<object-name>gear_handle</object-name>
+	<property>controls/gear/gear-down</property>
+	<factor>30</factor>
+	<center>
+		<x-m>0.632</x-m>
+		<y-m>0.130</y-m>
+		<z-m>0.619</z-m>
+	</center>
+	<axis>
+		<x>0</x>
+		<y>1</y>
+		<z>0</z>
+	</axis>
+</animation>
+
+<!-- Ai 2 -->
+
+
+<!--model>
+  <name>flaps</name>
+  <path>Aircraft/An-124/Models/Cockpit/Instruments/ai2/ai.xml</path>
+  <offsets>
+		<x-m>0.685</x-m>
+		<y-m>-0.16</y-m>
+		<z-m>0.72</z-m>
+		<pitch-deg>-22</pitch-deg>
+	</offsets>
+</model-->
+
+
+
+<!-- Flaps-->
+
+
+<model>
+  <name>flaps</name>
+  <path>Aircraft/An-124/Models/Cockpit/Instruments/FLAPS/flapsind.xml</path>
+  <offsets>
+		<x-m>0.699</x-m>
+		<y-m>-0.16</y-m>
+		<z-m>0.62</z-m>
+		<pitch-deg>-22</pitch-deg>
+	</offsets>
+</model>
+
+
+<!-- parking brake-->
+
+
+<animation>
+        <type>rotate</type>
+        <object-name>Ebrake</object-name>
+        <property>controls/gear/brake-parking</property>
+        <factor>60</factor>
+        <center>
+            <x-m>0.72</x-m>
+            <y-m>-0.33</y-m>
+            <z-m>0.50</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+
+
+    <animation>
+        <type>pick</type>
+        <object-name>Ebrake</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+            <command>property-toggle</command>
+            <property>controls/gear/brake-parking</property>
+            </binding>
+        </action>
+    </animation>
+
+
+<!--Engine indicator-->
+
+
+
+<model>
+  <name>engine</name>
+  <path>Aircraft/An-124/Models/Cockpit/Instruments/eng/eng_ind.xml</path>
+  <offsets>
+		<x-m>0.699</x-m>
+		<y-m>0.0</y-m>
+		<z-m>0.74</z-m>
+		<pitch-deg>-22</pitch-deg>
+	</offsets>
+</model>
+
+
+
+
+
+
+
+
+
+<!--CoPilot-->
+
+<!-- attitude indicator  -->
+<model>
+  <name>ai</name>
+  <path>Aircraft/An-124/Models/Cockpit/Instruments/ai/ai.xml</path>
+  <offsets>
+		<x-m>0.689</x-m>
+		<y-m>0.51</y-m>
+		<z-m>0.72</z-m>
+		<pitch-deg>-22</pitch-deg>
+	</offsets>
+</model>
+
+<!-- autopilot  -->
+<model>
+  <name>ap</name>
+  <path>Aircraft/An-124/Models/Cockpit/Instruments/ap/ap.xml</path>
+  <offsets>
+		<x-m>0.689</x-m>
+		<y-m>0.51</y-m>
+		<z-m>0.80</z-m>
+		<pitch-deg>-22</pitch-deg>
+	</offsets>
+</model>
+
+
+<!-- Horizontal Situation Indicator  -->
+
+<model>
+  <name>hsi</name>
+  <path>Aircraft/An-124/Models/Cockpit/Instruments/HSI/hsi.xml</path>
+  <offsets>
+		<x-m>0.689</x-m>
+		<y-m>0.66</y-m>
+		<z-m>0.66</z-m>
+		<pitch-deg>-22</pitch-deg>
+	</offsets>
+</model>
+
+<!--model>
+  <name>hsi</name>
+  <path>Aircraft/An-124/Models/Cockpit/Instruments/pnp/pnp.xml</path>
+  <offsets>
+		<x-m>0.689</x-m>
+		<y-m>-0.66</y-m>
+		<z-m>0.66</z-m>
+		<pitch-deg>-22</pitch-deg>
+	</offsets>
+</model-->
+
+
+<!-- speed indicator  -->
+<model>
+  <name>alt</name>
+  <path>Aircraft/An-124/Models/Cockpit/Instruments/asi/asi_l.xml</path>
+  <offsets>
+		<x-m>0.661</x-m>
+		<y-m>0.29</y-m>
+		<z-m>0.76</z-m>
+		<pitch-deg>-22</pitch-deg>
+	</offsets>
+</model>
+
+
+<!-- altimeter  -->
+<model>
+  <name>alt</name>
+  <path>Aircraft/An-124/Models/Cockpit/Instruments/ALT/alt.xml</path>
+  <offsets>
+		<x-m>0.689</x-m>
+		<y-m>0.29</y-m>
+		<z-m>0.66</z-m>
+		<pitch-deg>-22</pitch-deg>
+	</offsets>
+</model>
+
+<!-- altitude set  -->
+<model>
+  <name>altset</name>
+  <path>Aircraft/An-124/Models/Cockpit/Instruments/alt-set/alt-set.xml</path>
+  <offsets>
+		<x-m>0.710</x-m>
+		<y-m>0.29</y-m>
+		<z-m>0.605</z-m>
+		<pitch-deg>-22</pitch-deg>
+	</offsets>
+</model>
+
+
+<!-- DME  -->
+<model>
+  <name>dme</name>
+  <path>Aircraft/An-124/Models/Cockpit/Instruments/DME/dme.xml</path>
+  <offsets>
+		<x-m>0.689</x-m>
+		<y-m>0.40</y-m>
+		<z-m>0.80</z-m>
+		<pitch-deg>-22</pitch-deg>
+	</offsets>
+</model>
+
+
+<!-- Vertical Speed -->
+<model>
+  <name>var</name>
+  <path>Aircraft/An-124/Models/Cockpit/Instruments/var/var-75.xml</path>
+  <offsets>
+		<x-m>0.689</x-m>
+		<y-m>0.40</y-m>
+		<z-m>0.72</z-m>
+		<pitch-deg>-22</pitch-deg>
+	</offsets>
+</model>
+
+
+<!-- vor -adf-->
+
+<model>
+  <name>iku</name>
+  <path>Aircraft/An-124/Models/Cockpit/Instruments/iku-1/iku-1_l.xml</path>
+  <offsets>
+		<x-m>0.71</x-m>
+		<y-m>0.40</y-m>
+		<z-m>0.625</z-m>
+		<pitch-deg>-15</pitch-deg>
+	</offsets>
+</model>
+
+
+</PropertyList>

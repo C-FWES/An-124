@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+<model>
+  <name>An-124 Generic</name>
+  <path>Aircraft/An-124/Models/An-124-model.xml</path>
+	<livery>
+                    <file type="string">Antonov</file>
+                </livery>
+</model>
+
+ <model>
+  <name>Cockpit</name>
+  <path>Aircraft/An-124/Models/An-124-cockpit.xml</path>
+	<offsets>
+            <x-m>0.4</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.0</z-m>
+            <pitch-deg>1</pitch-deg>
+        </offsets>
+  <condition>
+   <equals>
+    <property>sim/current-view/internal</property>
+    <value type="bool">true</value>
+   </equals>
+  </condition>
+ </model>
+
+<model>
+  <name>An-124 Operations</name>
+  <path>Aircraft/An-124/Models/An-124-operations.xml</path>
+</model>
+
+<model>
+  <name>An-124 Lighs</name>
+  <path>Aircraft/An-124/Models/An-124-lights.xml</path>
+</model>
+
+
+<model>
+  <name>An-124 Interior</name>
+  <path>Aircraft/An-124/Models/Interior/interior.xml</path>
+</model>
+
+<model>
+  <name>An-124 Operations</name>
+  <path>Aircraft/An-124/Models/An-124-cargo.xml</path>
+</model>
+
+</PropertyList>
+
